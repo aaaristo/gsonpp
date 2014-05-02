@@ -6,7 +6,7 @@ without using extra V8 heap to do it.
 Use [GSON](https://github.com/aaaristo/GSON) to deserialize.
 
 ```
-npm install gsonpp
+npm install gsonpp gson
 ```
 
 ```javascript
