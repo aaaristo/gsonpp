@@ -1,0 +1,33 @@
+{
+  "name": "gsonpp",
+  "version": "0.1.0",
+  "description": "Serialize huge circular object graphs to file",
+  "main": "./build/Release/gsonpp",
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/aaaristo/gsonpp.git"
+  },
+  "keywords": [
+    "javascript",
+    "object",
+    "graphs",
+    "v8",
+    "circular",
+    "non-recursive",
+    "serialize",
+    "file"
+  ],
+  "author": "aaaristo",
+  "license": "Apache2",
+  "bugs": {
+    "url": "https://github.com/aaaristo/gsonpp/issues"
+  },
+  "homepage": "https://github.com/aaaristo/gsonpp",
+  "devDependencies": {
+    "chai": "^1.9.1",
+    "gson": "^0.1.5"
+  }
+}
