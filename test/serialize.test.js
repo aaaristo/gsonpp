@@ -27,6 +27,8 @@ describe('region',function ()
        {
            var gph= cir();
 
+           gph[0][33]= 'age'; // test number keys
+
            gsonpp.serialize('a.gson',gph);
 
            var clone= GSON.parse(fs.readFileSync('a.gson','utf8'));

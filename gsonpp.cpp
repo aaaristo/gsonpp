@@ -98,11 +98,11 @@ inline void replaceQ(std::string input)
     }
 }
 
-std::string ts(Local<Value> v)
+std::string ts(Local<Value> v, bool force)
 {
    std::string s= std::string(*v8::String::Utf8Value(v->ToString()));
 
-   if (v->IsString())
+   if (force || v->IsString())
      s= stringifyString(s);
    /*{
         replaceQ(s);
@@ -110,6 +110,11 @@ std::string ts(Local<Value> v)
    }*/
 
    return s;
+}
+
+std::string ts(Local<Value> v)
+{
+   return ts(v,false);
 }
 
 void serializeObject(std::ofstream* out, Local<Object> obj)
@@ -122,7 +127,7 @@ void serializeObject(std::ofstream* out, Local<Object> obj)
    {
        const Local<Value> key = keys->Get(i);
        const Local<Value> val = obj->Get(key);
-       const std::string skey= ts(key);
+       const std::string skey= ts(key,true);
 
        if (val->IsUndefined()||skey.compare("\"_\"")==0) continue;
 
