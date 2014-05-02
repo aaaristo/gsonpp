@@ -6,7 +6,7 @@ var should= require('chai').should(),
 
 var cir= function ()
 {
-    var a= { nome: 'Andrea' },
+    var a= { x: undefined, nome: 'Andrea' },
         e= { nome: 'Elena' };
 
     a.figlia= e;

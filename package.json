@@ -1,6 +1,6 @@
 {
   "name": "gsonpp",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Serialize huge circular object graphs to file",
   "main": "./build/Release/gsonpp",
   "scripts": {

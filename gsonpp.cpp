@@ -123,6 +123,8 @@ void serializeObject(std::ofstream* out, Local<Object> obj)
 
    Local<Array> keys = obj->GetPropertyNames();
    uint32_t length = keys->Length();
+   bool notfirst = false;
+
    for (uint32_t i=0 ; i<length ; ++i)
    {
        const Local<Value> key = keys->Get(i);
@@ -131,8 +133,10 @@ void serializeObject(std::ofstream* out, Local<Object> obj)
 
        if (val->IsUndefined()||skey.compare("\"_\"")==0) continue;
 
-       if (i>0)
+       if (notfirst)
          *out << ","; 
+
+       notfirst= true;
 
        if (isNode(val))
          *out << skey << ":{\"_\":" << oh(val->ToObject()) << "}"; 
