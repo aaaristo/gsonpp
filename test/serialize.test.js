@@ -23,7 +23,7 @@ describe('region',function ()
            fs.unlink('a.gson',function () { done(); /* ignore err */ });
        });
 
-       it('can serialize a circular object graph', function (done)
+       var test_serialize= function (done)
        {
            var gph= cir();
 
@@ -37,5 +37,8 @@ describe('region',function ()
            clone[0].figlia.should.equal(clone[2][0]);
 
            done();
-       });
+       };
+
+       it('can serialize a circular object graph', test_serialize);
+       it('can serialize a circular object graph 2 times :)', test_serialize);
 });

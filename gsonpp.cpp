@@ -178,6 +178,7 @@ void serializeNode(std::ofstream* out, Local<Value> node)
 
 Handle<Value> Method(const Arguments& args)
 {
+  idx= 0;
   HandleScope scope;
 
   String::Utf8Value file(args[0]);
